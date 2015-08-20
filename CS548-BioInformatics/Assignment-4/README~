@@ -1,5 +1,0 @@
-Compilation:
-g++ --std=c++11 eval_assembly.cpp -o eval_assembly
-
-Running the code:
-./eval_assembly --input file_name.fa

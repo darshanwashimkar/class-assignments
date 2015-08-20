@@ -1,5 +1,0 @@
-Compilation:
-g++ --std=c++11 gassembler.cpp -o gassembler
-
-Running the code:
-./gassembler -k 55 -d 1 --r1 example-1 --r2 example-2
