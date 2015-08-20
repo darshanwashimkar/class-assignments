@@ -1,0 +1,1 @@
+AllPalandron.d: ../AllPalandron.cpp

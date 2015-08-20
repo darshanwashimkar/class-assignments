@@ -1,0 +1,1 @@
+subsetSum.d: ../subsetSum.cpp

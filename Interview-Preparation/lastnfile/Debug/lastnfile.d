@@ -1,0 +1,1 @@
+lastnfile.d: ../lastnfile.cpp

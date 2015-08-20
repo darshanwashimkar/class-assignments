@@ -1,0 +1,1 @@
+hashfun.d: ../hashfun.cpp
