@@ -1,0 +1,69 @@
+P2P File Sharing Network
+
+INFO
+----
+
+P2P File sharing network software is a simulation of peer to peer
+file sharing system. Network is simulated with the help of config 
+file.(config.txt) File in the network is downloaded by clients 
+with the help of tracker process. Download file and Downloaded file 
+will be in a same folder.
+
+Client to Client message format
+-------------------------------
+
+Client to Client message format contains following message types.
+
+*Request Chunk List
+
+-Message Type
+-File Name
+-Node ID
+
+*ReplyMemoryMap
+
+-Message Type
+-File Name
+-Node ID
+-Available chunks
+
+*AskData
+
+-Message Type
+-File Name
+-Node ID
+-Chunk requested
+
+*Provide DATA
+
+-Message Type
+-File Name
+-Node ID
+-Chunk number 
+-Data
+
+I did one change in change in Client-Tracker message format
+--Added one more field of File Size.
+This helps to figure out actual file size and form memory map on clients
+which don't have files.
+
+
+Idiosyncrasies
+--------------
+There are following idiosyncrasies in the project.
+
+-Wrong file name or blank fields may incounter unexpected termination
+-File Name more than 31 charachers may through exception 
+-Project fail to produce correct output format
+
+This protocol may cause problem when there is a transfer with loss.
+This can be eleminated by providing guaranteed packet delivery mechanism
+like TCP.
+
+Termination method
+------------------
+
+As protocol is managing state of the communication in each message transfer
+and data transfer. Client may choose to terminate anytime. In this project client
+terminate when it has nothing to do in network.(That is file sharing or file donwload)
+

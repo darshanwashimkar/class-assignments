@@ -1,0 +1,36 @@
+# Sample config file 
+
+# Number of clients (nodes) 
+# (Assign node ID sequentially starting from 0) 
+10 
+
+# Request timeout in seconds 
+5 
+
+
+
+# Packet delay and drop probability 
+# Node ID 	Packet delay (in msec) 		Poacket drop probability 
+0		10				0
+1		10				0
+2		300				0
+3		20				0
+4		20				0
+5		400				0
+8		300				0
+-1		0				0
+#Termination of list 
+
+# Specify which nodes will have which files initially, empty for phase 1
+
+#NODE ID 	Filename
+4		/csu/cs557/foo.pcap
+-1		---
+
+
+# Specify the download tasks, empty for phase 1 
+#NODE ID	Filename 	StartTime 	Share 
+4		/csu/cs557/foo.pcap 15		1
+5		/csu/cs557/foo.pcap 10		0
+5		/csu/cs557/foo1.pcap 10		0	
+-1		---		-1		-1

@@ -1,0 +1,80 @@
+A File Sharing Network over NDN
+
+INFO
+----
+
+A File Sharing Network over NDN is a simulation of peer to peer
+file sharing system. Network is simulated with the help of config 
+file.(manager.config). Download file and Downloaded file will be 
+in a same folder. All the (.out) files will be saved in (out) folder.
+Clients request to the network for intended file, if any node have 
+already published the same file then client receives the response 
+otherwise client will keep asking for given file unless time out 
+occurs.
+
+
+HOW TO COMPILE and RUN
+----------------------
+
+Compile - go to program directory
+
+$ make all
+
+Run - go to program directory
+
+$ ./proj2
+
+
+Before running program please make sure you have installed CCNx and put
+manager.config file in the directory.
+
+
+Implementation experience
+-------------------------------
+
+First of all, time I spent working on this project (proj2) is 1/3 of a 
+time I worked on project one. I think it is because of following reasons.
+
+* I already had lot of reusable code.
+* After implimenting project 1, I got better and more efficient ideas of 
+  how such project can be implimented and what can be the challeges?
+* Overhead of creating overlay network which will track all interested clients,
+  which was not there in project 2 (All this things are managed by CCNx)
+
+
+Suprising Things
+----------------
+
+* Easier deployment
+* With considerably less number of changes, we can shift same application to 
+  NDN architecture (At least in such type of application )
+* Data caching by NDN comes very useful with P2P applications like this project.
+  Which can drastically decrease file downloading speed.
+* NDN can work extraordinary in followng type of applications
+  - Streaming Video, where multiple users are attempting to view the video
+  - Simultaneously in real time broadcast applications 
+  - File Sharing
+  - Instant messaging, VoIp
+
+
+Comparison with traditional networks
+------------------------------------
+
+There are many advantages of NDN over traditional network architecture specially
+
+- In terms of content distribution, NDN saves lot of overhead of traditional network 
+  architecture.
+- In case of IPv4, we had crises for available name spaces. There is no such limitation
+  in case of NDN.
+- NDN provides flexibility about publisher of data. It is relatively simpler in NDN.
+- Implimenting broadcasting is extraordinarily easier in NDN.
+- Security if primery concern of today's internet architecture, this is well addressed in NDN.
+
+Drawbacks of NDN
+----------------
+
+* For poorly designed application over NDN (ex. Without publisher key), anyone can poison
+  publisher's content. For example, in case of this application if anyone(another user)
+  publish same file url, then they can poison content in network and client will not receive
+  correct information.
+
